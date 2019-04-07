@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="easy-sidebar-active">
+<head>
+	<meta charset="UTF-8">
+	<title>中原資管介紹</title>
+	<link rel="stylesheet" type="text/css" href="css/easy-sidebar.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+</head>
+
+
+
+
+
+<body>
+<!--easy-sidebar-right -->
+<nav class="navbar navbar-inverse easy-sidebar">
+  <div class="container-fluid"> 
+    <div class="navbar-header">
+       <!--easy-sidebar-toggle-right -->
+      <button type="button" class="navbar-toggle easy-sidebar-toggle" aria-expanded="false"> 
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">主選單</a> 
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">首頁</a></li>
+      <li><a href="#">影片介紹</a></li>
+      <li><a href="#">詳細介紹</a></li>
+      <li><a href="#">組員介紹</a></li>
+    </ul>
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+
+<div class="container">
+  <!--easy-sidebar-toggle-right -->
+  <span class="where">現在位置:首頁</span>
+  <button class="btn btn-primary outline btn-lg easy-sidebar-toggle">選單</button>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+//easy-sidebar-toggle-right
+$('.easy-sidebar-toggle').click(function(e) {
+    e.preventDefault();
+   //$('body').toggleClass('toggled-right');
+    $('body').toggleClass('toggled');
+   //$('.navbar.easy-sidebar-right').removeClass('toggled-right');
+    $('.navbar.easy-sidebar').removeClass('toggled');
+});
+</script>
+<hr>
+</body>
+</html>
