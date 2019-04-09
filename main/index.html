@@ -23,13 +23,13 @@
         <span class="icon-bar"></span> 
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">主選單</a> 
+      <a class="navbar-brand" href="index.html">主選單</a> 
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">首頁</a></li>
-      <li><a href="#">影片介紹</a></li>
-      <li><a href="#">詳細介紹</a></li>
-      <li><a href="#">組員介紹</a></li>
+      <li class="active"><a href="home.html" target="middle">首頁</a></li>
+      <li><a href="video.html" target="middle">影片介紹</a></li>
+      <li><a href="detail.html" target="middle">詳細介紹</a></li>
+      <li><a href="member.html" target="middle">組員介紹</a></li>
     </ul>
   </div>
   <!-- /.container-fluid --> 
@@ -37,7 +37,6 @@
 
 <div class="container">
   <!--easy-sidebar-toggle-right -->
-  <span class="where">現在位置:首頁</span>
   <button class="btn btn-primary outline btn-lg easy-sidebar-toggle">選單</button>
 </div>
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -53,5 +52,6 @@ $('.easy-sidebar-toggle').click(function(e) {
 });
 </script>
 <hr>
+<iframe src="home.html" frameborder="0" name="middle" scrolling="no"></iframe>
 </body>
 </html>
