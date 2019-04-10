@@ -3,17 +3,135 @@
 <head>
 	<meta charset="UTF-8">
 	<title>中原資管介紹</title>
-	<link rel="stylesheet" type="text/css" href="css/easy-sidebar.css">
+	  <link rel="stylesheet" href="css/home.css" type = "text/css">
+	  <link rel="stylesheet" type="text/css" href="css/easy-sidebar.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 </head>
 
 
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
 
+    $(function() {
+        $('#gotop').click(function(){
+            $('html,body').animate({ scrollTop: 0 }, 900);
+                return false;
+         });
+        $(window).scroll(function() {
+            if ( $(this).scrollTop() > 100){
+                $('#gotop').fadeIn();
+            } else {
+                $('#gotop').fadeOut();
+            
+            }
+        });
 
+    $(function(){
+    // 先取得相關區塊及塊的高
+    // 並取得 li
+    var $block = $('#abgne-block-20111227'),
+    _blockHeight = $block.height(),
+    $list = $block.find('li'),
+    _liOpacity = 0.8,
+    _animateSpeed = 900,
+    _selectedIndex = 0;
+  var timer, speed = 3000;
+ 
+// 用來自動輪播使用
+function auto(){
+  var _index = (_selectedIndex + 1) % $li.length;
+  $li.eq(_index).mouseover();
+ 
+  timer = setTimeout(auto, speed + _animateSpeed);
+}
+ 
+$block.hover(function(){
+  // 當滑鼠移入時, 停止計時器
+  clearTimeout(timer);
+}, function(){
+  // 當滑鼠移出時, 啟動計時器
+  timer = setTimeout(auto, speed);
+});
+ 
+// 啟動計時器
+timer = setTimeout(auto, speed);
+    
+    // 產生下方控制用的 ul li
+var $controls = $('<ul class="controls"></ul>'),
+_li = '';
+$list.each(function(i){
+var $this = $(this).css({
+position: 'absolute',
+top: i==_selectedIndex ? 0 : _blockHeight,
+zIndex: i==_selectedIndex ? 1 : 0,
+display: i==_selectedIndex ? 'block' : 'none'
+}),
+$a = $this.find('a');
+_li += '<li><a href="'+$a.attr('href')+'">'+$a.find('img').attr('alt')+'</a></li>';
+});
+// 幫 li 加上透明度
+// 並計算 li 基本寬度及最大寬度
+var $li = $controls.html(_li).appendTo($block).find('li').css('opacity', _liOpacity),
+_liWidth = $li.width(),
+_selectedWidth = $block.width() - ($li.length - 1) * _liWidth - 1;
+// 當滑鼠移到 li 上時
+$li.mouseover(function(){
+var $this = $(this),
+_index = $this.index();
+// 如果現在移上去的跟已顯示是的同一個就跳過
+if(_selectedIndex == _index) return;
+// 進行動畫切換
+$list.eq(_index).stop(true, true).css({
+top: _blockHeight,
+zIndex: 1,
+display: 'block'
+}).animate({
+top: 0
+}, _animateSpeed).end().eq(_selectedIndex).stop(true, true).animate({
+top: -_blockHeight
+}, _animateSpeed, function(){
+$(this).hide();
+});
+// 把滑鼠移上去的 li 寬度變成最大寬度
+// 並將上一個最大寬度的 li 寬度變成基本寬度
+//$this.addClass('selected').find('a').width(_selectedWidth).end().siblings('.selected').removeClass('selected').find('a').width(_liWidth-1);
+$this.addClass('selected').find('a').width(_selectedWidth);
+$li.eq(_selectedIndex).removeClass('selected').find('a').width(_liWidth-1);
+_selectedIndex = _index;
+}).eq(_selectedIndex).addClass('selected').find('a').width(_selectedWidth);
+});
+});
+</script>
 
 <body>
-<div>
-    <p>這是會首頁內容頁面</p>
-  </div>
+	<div class="content_home">
+
+    	<div id="abgne-block-20111227">
+                <ul class="lists">
+                    <li><a href="#"><img alt="正面" src="img/front_mark.JPG"></a></li>
+                    <li><a href="#"><img alt="側面" src="img/front.JPG"></a></li>
+                    <li><a href="#"><img alt="背面" src="img/back.JPG"></a></li>
+                </ul>
+        </div>
+       <div class="text_home"> 
+       	<h1 class="title_home">中原大學資訊管理學系的優勢</h1>
+       		<ol> 
+       			<li>學習環境及資源：本系目前擁有一座系館，2016年更打造一間物聯網創客基地，提供給學生創意發想的環境。
+       			</li>
+       			<li>密切的師生關係：完善的「導師制度」：本系大一各班安排雙導師，其餘年級各班安排一位導師。
+       			</li>
+       			<li>最具前瞻性的科技：本系的研究方向與課程規劃永遠走在時代的尖端。
+       			</li>
+       			<li>五年讀完學碩士：對於成績優異的同學，本校提供「五年學碩士學位取得辦法」，讓有心及早就業或出國深造的同學有更多的選擇。
+       			</li> 
+       			<li>精彩的大學生活：本系的學生在中原十分活躍，無論是新生盃的運動競賽、各式各樣的校隊與社團活動，皆能看到資管人的蹤跡。
+       			</li>
+       			<li>強大的就業資源：本系畢業系友，發展方向相當廣泛並在各領域都有傑出表現。
+       			</li>
+       		</ol>
+       </div>
+    </div>
+
+  
 </body>
 </html>

@@ -1999,7 +1999,7 @@ pre code {
     padding-top: 5px;
 }
 .hidethis{
-    display:none;
+    visibility:hidden;
 }
 @media (min-width:768px) {
     .container {
@@ -4383,7 +4383,7 @@ fieldset[disabled] .btn-link:hover {
 /*調整導航欄按鈕*/
 .btn-group-lg>.btn,
 .btn-lg {
-    padding: 2px 90px;
+    padding: 2px 50px;
     font-size: 24px;
     line-height: 1.3333333;
     border-radius: 6px
@@ -5414,7 +5414,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 /*叉叉的位置*/
 .navbar-toggle {
     position: relative;
-    padding: 12px 30px;
+    padding: 12px 107px;
     margin-top: 10px;
     margin-right: 15px;
     margin-bottom: 8px;
@@ -5797,7 +5797,7 @@ fieldset[disabled] .navbar-default .btn-link:hover {
 .navbar-inverse .navbar-nav>li>a:focus,
 .navbar-inverse .navbar-nav>li>a:hover {
     color:#ea0000;
-    background-color: #1a8c0b
+    background-color: #006030
 }
 
 .navbar-inverse .navbar-nav>.active>a,
@@ -8341,3 +8341,33 @@ button.close {
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+.index_iframe{
+  width:100%; 
+  height:900px;
+  padding-top:150px;
+}
+.video_iframe{
+    float:left;
+    width:40%;
+    padding-left:100px;
+}
+.content_video{
+    margin-left:1000px;
+    width:40%;
+    line-height:48px;
+    font-size:24px;
+    font-family: Microsoft JhengHei;
+    text-align:justify;
+}
+.content_video h1{
+    font-weight:bolder;
+}
+footer{
+     height: 15%;
+     background-color:#006030;
+     top:-15%;
+     position:relative;
+}
+body{
+    height:85%;
+}
